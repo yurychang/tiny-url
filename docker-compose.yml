@@ -2,13 +2,13 @@ services:
   postgres:
     image: postgres:latest
     environment:
-      POSTGRES_DB: postgres
+      POSTGRES_DB: tinyUrl
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 111111
     ports:
       - '5433:5432'
     volumes:
-      - express-template-postgres-data:/var/lib/postgresql/data
+      - tiny-url-postgres-data:/var/lib/postgresql/data
 
 volumes:
-  express-template-postgres-data:
+  tiny-url-postgres-data:
