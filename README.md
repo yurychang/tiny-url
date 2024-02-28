@@ -7,5 +7,11 @@
 
 ## Project Setup
 ```
+pnpm install
+```
+
+## Update Database
+```
 pnpm prisma generate
+pnpm prisma db push
 ```
