@@ -8,6 +8,7 @@
 ## Project Setup
 ```
 pnpm install
+pnpm add -g dotenv-cli
 ```
 
 ## Update Database
