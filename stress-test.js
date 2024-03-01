@@ -31,7 +31,7 @@ const urlList = [
 async function redirect() {
   const result = await autocannon({
     url: `http://localhost:8080/FuYiIpr`,
-    connections: 1000, //default
+    connections: 10000, //default
     pipelining: 1, // default
     duration: 10, // default
   });

@@ -16,3 +16,9 @@ pnpm add -g dotenv-cli
 pnpm prisma generate
 pnpm prisma db push
 ```
+
+## Stress Test & Resource Monitoring
+Start the stress test and resource monitoring in local.
+```
+pnpm clinic:dev
+```

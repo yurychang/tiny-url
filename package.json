@@ -4,12 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "docker compose up -d && DOTENV_CONFIG_PATH=.env.dev nodemon",
-    "start": "node -r dotenv/config -r tsconfig-paths/register ./build/main.js",
-    "build": "rm -rf ./build & tsc",
-    "migrate:postgres": "dotenv -e .env.dev -- prisma db push deploy"
+    "start": "TS_NODE_BASEURL=./build node -r dotenv/config -r tsconfig-paths/register ./build/main.js",
+    "build": "rm -rf ./build && tsc",
+    "migrate:postgres": "dotenv -e .env.dev -- prisma db push deploy",
+    "clinic": "DOTENV_CONFIG_PATH=.env.dev clinic doctor -- node node_modules/nodemon/bin/nodemon.js",
+    "clinic:dev": "pnpm build && DOTENV_CONFIG_PATH=.env.dev TS_NODE_BASEURL=./build clinic doctor --on-port 'node stress-test.js' -- node -r dotenv/config -r tsconfig-paths/register ./build/main.js"
   },
   "dependencies": {
     "@prisma/client": "5.7.1",
+    "clinic": "^13.0.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.3.1",
