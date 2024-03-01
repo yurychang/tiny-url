@@ -1,5 +1,7 @@
 build
 node_modules
+stress-test/records
+stress-test/latest
 
 .env
 .clinic
